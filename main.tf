@@ -46,7 +46,3 @@ resource "aws_iam_openid_connect_provider" "cluster" {
   thumbprint_list = [data.external.thumb.result.thumbprint]
   url             = aws_eks_cluster.eks.identity.0.oidc.0.issuer
 }
-
-output "value" {
-  value = aws_eks_cluster.eks.identity.0.oidc.0.issuer
-}
